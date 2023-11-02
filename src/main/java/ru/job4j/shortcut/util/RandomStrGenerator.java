@@ -2,14 +2,13 @@ package ru.job4j.shortcut.util;
 
 import java.util.Random;
 
-public class RandomGenerator {
-
-    private RandomGenerator() { }
+public class RandomStrGenerator {
 
     private static final int LEFT_LIMIT = 48;
     private static final int RIGHT_LIMIT = 122;
     private static final Random RANDOM = new Random();
 
+    private RandomStrGenerator() { }
 
     public static String generate(int length) {
         return RANDOM.ints(LEFT_LIMIT, RIGHT_LIMIT + 1)
