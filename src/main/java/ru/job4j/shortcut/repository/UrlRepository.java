@@ -1,5 +1,6 @@
 package ru.job4j.shortcut.repository;
 
+import java.util.Collection;
 import java.util.Optional;
 import org.springframework.data.jpa.repository.Modifying;
 import org.springframework.data.jpa.repository.Query;
@@ -15,5 +16,7 @@ public interface UrlRepository extends CrudRepository<Url, Integer> {
     @Modifying
     @Query(value = "UPDATE urls SET call_number = call_number + 1 WHERE id = ?", nativeQuery = true)
     void incrementCount(int id);
+
+    Collection<Url> getUrlsBySiteId(int id);
 
 }
