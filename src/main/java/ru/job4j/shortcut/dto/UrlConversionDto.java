@@ -8,7 +8,7 @@ import org.hibernate.validator.constraints.URL;
 @NoArgsConstructor
 public class UrlConversionDto {
 
-    @URL
+    @URL(message = "Please use URL address.")
     private String url;
 
 }

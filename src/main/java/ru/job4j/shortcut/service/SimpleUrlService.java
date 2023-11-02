@@ -44,4 +44,11 @@ public class SimpleUrlService implements UrlService {
         return resultOptional;
     }
 
+    @Override
+    public Optional<Url> findByCode(String code) {
+        Optional<Url> urlOptional = urlRepository.findByCode(code);
+        urlOptional.ifPresent(url -> urlRepository.incrementCount(url.getId()));
+        return urlOptional;
+    }
+
 }
